@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if(response.statusCode == 200){
       print("API hit successfully");
     //  print(data.toString());
-    //  print(data);
+     print(data);
       for(Map i in data){
         print(Product.fromJson(data[i]));
         Product product=Product.fromJson(data[i]);
