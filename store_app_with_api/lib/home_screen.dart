@@ -23,13 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
     if(response.statusCode == 200){
       print("API hit successfully");
     //  print(data.toString());
-     print(data);
+    // print(data);
       for(Map i in data){
-        print(Product.fromJson(data[i]));
         Product product=Product.fromJson(data[i]);
         products.add(product);
       }
-      print(products);
       return products;
     }else{
       print("Failed");
@@ -55,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 future: getProducts(),
                 builder: (context, snapshot){
                     if(!snapshot.hasData) {
-                      return const  Center(child: CircularProgressIndicator(),);
+                      return const  Center(child: Text("Loading",style: TextStyle(color: Colors.black),),);
                     }else{
                       //
                       return ListView.builder(
