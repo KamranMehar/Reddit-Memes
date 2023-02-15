@@ -137,11 +137,6 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-  Future<void> refFreshPage()async{
-    setState(() {
-
-    });
-  }
   @override
   void initState() {
 
